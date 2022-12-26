@@ -8,7 +8,7 @@ const RESULTS = {
   low: 'Можем вас понять. Нейросеть некоторые вещи понимает очень буквально, а иногда наоборот поражает образностью. Здорово, что несколько пословиц вам удалось вычислить!',
   medium:
     'Добрая половина правильных ответов! Мы угадали бы меньше, честное слово!',
-  high: 'Видимо, вы с нейросетями на ты! Или очень хорошо чувствуете русские пословицы. В любом случае результат поразительный и вам положен небольшой подарок — специальный стикер-пак',
+  high: 'Видимо, вы с нейросетями на ты! Или очень хорошо чувствуете русские пословицы. В любом случае результат поразительный и вам положен небольшой подарок — специальный стикер-пак. Получите его в МЕГЕ на центральном столе информации, показав скриншот этого результата.',
 };
 
 export default function Main() {
@@ -35,9 +35,9 @@ export default function Main() {
     setCurrentQuestion(newQuestions[0]);
   };
 
-  const _refreshPage = () => {
-    window.location.reload();
-  };
+  // const _refreshPage = () => {
+  //   window.location.reload();
+  // };
 
   return (
     <div className="container">
@@ -47,16 +47,16 @@ export default function Main() {
             <div className="end">
               <div className="count">{count} / 10</div>
               <div className="end-text">
-                {count >= 8
+                {count >= 7
                   ? RESULTS.high
                   : count <= 3
                   ? RESULTS.low
                   : RESULTS.medium}
               </div>
 
-              <button className="button small bg-yellow" onClick={_refreshPage}>
+              {/* <button className="button small bg-yellow" onClick={_refreshPage}>
                 Еще раз
-              </button>
+              </button> */}
             </div>
           ) : (
             <Question
